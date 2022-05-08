@@ -1,0 +1,333 @@
+/* IMPOSTAZIONI GENERALI */
+
+body{
+    color: #000;
+    font-size: 1.5rem;
+    font-family: 'Fira Sans', sans-serif;
+    line-height: 1.8;
+}
+
+ h1,h2,h3{
+     line-height: 1;
+ }
+
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size:3.5rem;
+}
+h3{
+    font-size: 2.3rem;
+    margin-bottom: 1em;
+}
+button{
+    margin-top: 0.5em;
+    padding: 0.5em;
+    font-size: 1.9rem;
+    color: white;
+    background: rgb(108,196,226);
+    background: linear-gradient(135deg, rgba(108,196,226,1) 17%, rgba(57,47,122,1) 100%);
+    border: none;
+    text-shadow:1px 1px 5px #000 ;
+    animation: button 1s infinite;
+
+}
+@keyframes button{
+    0%{
+      box-shadow: 0 0 0 0 #000;
+      
+    }
+  
+    50%{
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.486);
+    }
+  
+    100%{
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      
+    }
+}
+.lni, a {
+  color: #e42424;
+  text-decoration: none;
+  justify-content: center;
+  margin-right: 0.5em;
+
+}
+
+/* HEADER */
+
+
+header img{
+    margin-left: 1em;
+    padding: 0.5em 0.5em;
+
+}
+header div:first-child{
+   box-shadow: 0px 10px 10px 3px #d3d3d3; 
+   background-color: white;
+   z-index: 1;
+   position: relative;
+}
+header div:nth-child(2){
+    background-color: grey;
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    padding: 1.15em;
+    color: white;
+    text-shadow:1px 1px 5px #000 ;
+}
+
+
+/* nav */
+header div:first-child{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ padding-right: 2em;
+
+}
+header a {
+    color: grey;
+}
+header a:hover {
+    color: #e42424;
+}
+
+input#tendina {
+    display: none
+}
+input#tendina:checked ~ nav {
+    height:9em;
+} 
+nav li button{
+    margin-top: 0;
+    padding: 1em;
+    box-sizing: border-box;
+}
+/* main */
+
+main{
+   
+   text-align: center;
+}
+main div{
+ margin-bottom: 1em;
+ padding: 1.15em;
+ 
+}
+main div div img{
+    width: 95%;
+}
+main section div{
+    margin-bottom: 1em;
+}
+table{
+    margin: 1.5em auto;
+
+}
+table .colorato{
+   background-color: #d2dce7;
+}
+
+form{
+    margin: auto;
+}
+form input,textarea {
+    display: block;
+   margin: auto;
+    margin-bottom: 1.5em; 
+    width: 80%;
+    height: 1.8rem;
+}
+textarea{
+    height: 4rem;
+}
+
+
+
+
+/* Aside */
+aside{
+    background-color: #0c0633;
+    color: white;
+    padding:  4em 1.15em;
+    text-align: center;
+}
+aside h3{
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+
+/* FOOTER */
+footer{
+    background-color:rgb(238, 238, 238) ;
+    padding: 2.30em;
+}
+footer div {
+    margin-bottom: 1em;
+}
+footer div:nth-last-child(2){
+    display: flex;
+    flex-direction: column;
+   
+    
+}
+footer div:nth-last-child(2) button{
+    margin: 0;
+  
+}
+footer input {
+    height: 4em;
+    color: #e42424;
+}
+
+
+
+/* RESPONSIVE */
+
+/* Dispaly telefono 500/750px
+display tablet 750/900px
+computer 900 px in poi  */
+
+
+@media screen and (min-width: 500px) and (max-width:750px) {
+    header nav {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        transition: height 1s linear;
+        text-decoration: none;
+    
+    }
+    #tendina{
+        margin-right: 4em;
+    }
+}
+
+@media screen and (min-width: 750px) {
+
+    h1,h2,h3{
+        line-height: 1.1;
+    }
+    #tendina {
+        display: none;
+    }
+    label{
+        display: none;
+    }
+
+    header nav ul {
+     margin-right: 2em; 
+ 
+    }
+
+    header nav ul li,button {
+        display: inline-block;
+        margin: 0 auto;
+        margin-bottom: 0;
+    }
+    
+
+    header nav ul li a {
+        text-decoration: none;
+        color: #000;
+
+    }
+    nav div{
+        height: 1em;
+    }
+    header div:first-child{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .sezione{
+        display: flex;
+        
+    }
+     section:last-child div{
+    display: flex;
+    }
+
+    section:last-child div .sezione {
+        display: flex;
+        flex-direction: column;
+    }
+    section:last-child div div{
+        display: inline-block;
+    }
+    footer{
+    display: grid;
+    grid-template-areas:"a b c" 
+                        "d d d";
+    grid-row: 2;
+    
+    }
+    footer div:first-child{
+        grid-area: a;
+    }
+    footer div:last-child{
+        grid-area: d;
+      
+    }
+    footer div:nth-child(2){
+        grid-area: b;
+    }
+    footer div:nth-child(3){
+        grid-area: c;
+    }
+    footer div:last-child p, address, a{
+        display: inline-block;
+        font-size: 0.6em;
+    }
+    footer div:first-child p:last-child{
+        font-size: 0.8em;
+    }
+    footer div{
+        margin-left: 1.2em;
+    }
+
+  #contatti{
+        display: flex;
+       padding: 2.3rem;
+        
+
+    }
+    #contatti p, a{
+        font-size: 1.1rem;
+    }
+
+    #cosasiamo{
+        display: flex;
+    }
+    #cosasiamo div{
+        padding: 0;
+    }
+     
+}
+
+@media screen and (min-width: 900px){
+
+    h1,h2,h3{
+        line-height: 1.2;
+    }
+    header div:first-child{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+        header nav ul {
+        margin-right: 0; 
+    }
+
+}  
+        
+    
+
+
+    
